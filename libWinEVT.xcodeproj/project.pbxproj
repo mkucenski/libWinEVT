@@ -1,0 +1,230 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXFileReference section */
+		9ACA05731D1E3900009FDB67 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		9ACA05741D1E3900009FDB67 /* bootstrap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = bootstrap; sourceTree = "<group>"; };
+		9ACA05751D1E3900009FDB67 /* configure.ac */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = configure.ac; sourceTree = "<group>"; };
+		9ACA05761D1E3900009FDB67 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		9ACA05771D1E3900009FDB67 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Makefile.am; path = src/Makefile.am; sourceTree = "<group>"; };
+		9ACA05781D1E3900009FDB67 /* eventFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = eventFile.h; path = src/eventFile.h; sourceTree = "<group>"; };
+		9ACA05791D1E3900009FDB67 /* eventRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = eventRecord.h; path = src/eventRecord.h; sourceTree = "<group>"; };
+		9ACA057A1D1E3900009FDB67 /* utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = utils.cpp; path = src/utils.cpp; sourceTree = "<group>"; };
+		9ACA057B1D1E3900009FDB67 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = utils.h; path = src/utils.h; sourceTree = "<group>"; };
+		9ACA057C1D1E3900009FDB67 /* winEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = winEvent.cpp; path = src/winEvent.cpp; sourceTree = "<group>"; };
+		9ACA057D1D1E3900009FDB67 /* winEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = winEvent.h; path = src/winEvent.h; sourceTree = "<group>"; };
+		9ACA057E1D1E3900009FDB67 /* winEventCursor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = winEventCursor.cpp; path = src/winEventCursor.cpp; sourceTree = "<group>"; };
+		9ACA057F1D1E3900009FDB67 /* winEventCursor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = winEventCursor.h; path = src/winEventCursor.h; sourceTree = "<group>"; };
+		9ACA05801D1E3900009FDB67 /* winEventFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = winEventFile.cpp; path = src/winEventFile.cpp; sourceTree = "<group>"; };
+		9ACA05811D1E3900009FDB67 /* winEventFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = winEventFile.h; path = src/winEventFile.h; sourceTree = "<group>"; };
+		9ACA05821D1E3900009FDB67 /* winEventHeader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = winEventHeader.cpp; path = src/winEventHeader.cpp; sourceTree = "<group>"; };
+		9ACA05831D1E3900009FDB67 /* winEventHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = winEventHeader.h; path = src/winEventHeader.h; sourceTree = "<group>"; };
+		9ACA05841D1E3900009FDB67 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		9ACA05851D1E3911009FDB67 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				9ACA05771D1E3900009FDB67 /* Makefile.am */,
+				9ACA05781D1E3900009FDB67 /* eventFile.h */,
+				9ACA05791D1E3900009FDB67 /* eventRecord.h */,
+				9ACA057A1D1E3900009FDB67 /* utils.cpp */,
+				9ACA057B1D1E3900009FDB67 /* utils.h */,
+				9ACA057C1D1E3900009FDB67 /* winEvent.cpp */,
+				9ACA057D1D1E3900009FDB67 /* winEvent.h */,
+				9ACA057E1D1E3900009FDB67 /* winEventCursor.cpp */,
+				9ACA057F1D1E3900009FDB67 /* winEventCursor.h */,
+				9ACA05801D1E3900009FDB67 /* winEventFile.cpp */,
+				9ACA05811D1E3900009FDB67 /* winEventFile.h */,
+				9ACA05821D1E3900009FDB67 /* winEventHeader.cpp */,
+				9ACA05831D1E3900009FDB67 /* winEventHeader.h */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		9AFC9F851D1E383D00F0E635 = {
+			isa = PBXGroup;
+			children = (
+				9ACA05731D1E3900009FDB67 /* LICENSE */,
+				9ACA05741D1E3900009FDB67 /* bootstrap */,
+				9ACA05751D1E3900009FDB67 /* configure.ac */,
+				9ACA05761D1E3900009FDB67 /* Makefile.am */,
+				9ACA05841D1E3900009FDB67 /* README.md */,
+				9ACA05851D1E3911009FDB67 /* src */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		9AFC9F8A1D1E383D00F0E635 /* libWinEVT */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 9AFC9F8D1D1E383D00F0E635 /* Build configuration list for PBXLegacyTarget "libWinEVT" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			dependencies = (
+			);
+			name = libWinEVT;
+			passBuildSettingsInEnvironment = 1;
+			productName = libWinEVT;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXProject section */
+		9AFC9F861D1E383D00F0E635 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Matt Kucenski";
+				TargetAttributes = {
+					9AFC9F8A1D1E383D00F0E635 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 9AFC9F891D1E383D00F0E635 /* Build configuration list for PBXProject "libWinEVT" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9AFC9F851D1E383D00F0E635;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9AFC9F8A1D1E383D00F0E635 /* libWinEVT */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		9AFC9F8B1D1E383D00F0E635 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+			};
+			name = Debug;
+		};
+		9AFC9F8C1D1E383D00F0E635 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+			};
+			name = Release;
+		};
+		9AFC9F8E1D1E383D00F0E635 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUGGING_SYMBOLS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9AFC9F8F1D1E383D00F0E635 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9AFC9F891D1E383D00F0E635 /* Build configuration list for PBXProject "libWinEVT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9AFC9F8B1D1E383D00F0E635 /* Debug */,
+				9AFC9F8C1D1E383D00F0E635 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9AFC9F8D1D1E383D00F0E635 /* Build configuration list for PBXLegacyTarget "libWinEVT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9AFC9F8E1D1E383D00F0E635 /* Debug */,
+				9AFC9F8F1D1E383D00F0E635 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9AFC9F861D1E383D00F0E635 /* Project object */;
+}
