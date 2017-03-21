@@ -46,21 +46,6 @@ typedef struct _EVENTLOGRECORD {
 } __attribute__((packed)) EVENTLOGRECORD;
 #define EVENTLOGRECORD_LENGTH 56
 
-#define SID_MAX_SUB_AUTHORITIES 15
-
-typedef struct _SID_IDENTIFIER_AUTHORITY {
-    BYTE  bValue[6];
-} __attribute__((packed)) SID_IDENTIFIER_AUTHORITY;
-#define SID_IDENTIFIER_AUTHORITY_LENGTH 6
-
-typedef struct _SID {
-   BYTE  bRevision;
-   BYTE  bSubAuthorityCount;
-   SID_IDENTIFIER_AUTHORITY identifierAuthority;
-   DWORD dwSubAuthority[SID_MAX_SUB_AUTHORITIES];
-} __attribute__((packed)) SID;
-#define SID_LENGTH 68
-
 #define EVENTID_CODE_MASK				0x0000ffff
 #define EVENTID_FACILITY_MASK			0x0fff0000
 #define EVENTID_CUSTOMER_MASK			0x20000000
