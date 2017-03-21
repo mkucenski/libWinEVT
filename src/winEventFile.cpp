@@ -49,8 +49,8 @@ WIN_EVENT_RV winEventFile::getNextRecord(winEvent** ppEvent) {
 		DWORD dwHeaderID = 0;
 		if (getData(&dwLength, sizeof(DWORD), m_lNextRecordPos, NULL) >= 0 && 
 			 getData(&dwHeaderID, sizeof(DWORD), NULL) >= 0) {
-			BIGTOHOST32(dwLength);
-			BIGTOHOST32(dwHeaderID);
+			LITTLETOHOST32(dwLength);
+			LITTLETOHOST32(dwHeaderID);
 			
 			bool bFound = false;
 			
@@ -60,7 +60,7 @@ WIN_EVENT_RV winEventFile::getNextRecord(winEvent** ppEvent) {
 				DEBUG_INFO("winEventFile::getNextRecord() Next record was not found in the expected location.  Searching...");
 				while (!bFound) {
 					if (getData(&dwHeaderID, sizeof(DWORD), NULL) >= 0) {
-						BIGTOHOST32(dwHeaderID);
+						LITTLETOHOST32(dwHeaderID);
 						
 						if (dwHeaderID == EVENTLOGRECORD_HEADER_ID) {
 							DEBUG_INFO("winEventFile::getNextRecord() Next record found at offset: " << offset() - 8 << " (diff = " << ((offset() - 8) - m_lNextRecordPos) << ")");

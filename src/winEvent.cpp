@@ -26,22 +26,22 @@ winEvent::winEvent(winEventFile* pEventFile, char* pData, long lOffset, DWORD dw
 	memset(&m_eventLogRecord, 0, EVENTLOGRECORD_LENGTH);	
 	memcpy(&m_eventLogRecord, pData, (dwLength < EVENTLOGRECORD_LENGTH ? dwLength : EVENTLOGRECORD_LENGTH));
 	
-	BIGTOHOST32(m_eventLogRecord.dwClosingRecordNumber);
-	BIGTOHOST32(m_eventLogRecord.dwDataLength);
-	BIGTOHOST32(m_eventLogRecord.dwDataOffset);
-	BIGTOHOST32(m_eventLogRecord.dwEventID);
-	BIGTOHOST32(m_eventLogRecord.dwHeaderID);
-	BIGTOHOST32(m_eventLogRecord.dwLength);
-	BIGTOHOST32(m_eventLogRecord.dwRecordNumber);
-	BIGTOHOST32(m_eventLogRecord.dwStringOffset);
-	BIGTOHOST32(m_eventLogRecord.dwTimeGenerated);
-	BIGTOHOST32(m_eventLogRecord.dwTimeWritten);
-	BIGTOHOST32(m_eventLogRecord.dwUserSidLength);
-	BIGTOHOST32(m_eventLogRecord.dwUserSidOffset);
-	BIGTOHOST16(m_eventLogRecord.wEventCategory);
-	BIGTOHOST16(m_eventLogRecord.wEventType);
-	BIGTOHOST16(m_eventLogRecord.wNumStrings);
-	BIGTOHOST16(m_eventLogRecord.wReservedFlags);	
+	LITTLETOHOST32(m_eventLogRecord.dwClosingRecordNumber);
+	LITTLETOHOST32(m_eventLogRecord.dwDataLength);
+	LITTLETOHOST32(m_eventLogRecord.dwDataOffset);
+	LITTLETOHOST32(m_eventLogRecord.dwEventID);
+	LITTLETOHOST32(m_eventLogRecord.dwHeaderID);
+	LITTLETOHOST32(m_eventLogRecord.dwLength);
+	LITTLETOHOST32(m_eventLogRecord.dwRecordNumber);
+	LITTLETOHOST32(m_eventLogRecord.dwStringOffset);
+	LITTLETOHOST32(m_eventLogRecord.dwTimeGenerated);
+	LITTLETOHOST32(m_eventLogRecord.dwTimeWritten);
+	LITTLETOHOST32(m_eventLogRecord.dwUserSidLength);
+	LITTLETOHOST32(m_eventLogRecord.dwUserSidOffset);
+	LITTLETOHOST16(m_eventLogRecord.wEventCategory);
+	LITTLETOHOST16(m_eventLogRecord.wEventType);
+	LITTLETOHOST16(m_eventLogRecord.wNumStrings);
+	LITTLETOHOST16(m_eventLogRecord.wReservedFlags);	
 	
 	if (dwLength > EVENTLOGRECORD_LENGTH) {
 		m_pEventFile->getTwoByteCharString(&m_strSource, m_lOffset + EVENTLOGRECORD_LENGTH, 0, true);
@@ -89,21 +89,21 @@ WIN_EVENT_RV winEvent::getSID(SID* pSID) {
 		if (0 < m_eventLogRecord.dwUserSidOffset && m_eventLogRecord.dwUserSidOffset < m_eventLogRecord.dwLength) {
 			if (0 < m_eventLogRecord.dwUserSidLength && m_eventLogRecord.dwUserSidLength < SID_LENGTH) {
 				if (m_pEventFile->getData(pSID, m_eventLogRecord.dwUserSidLength, m_lOffset + m_eventLogRecord.dwUserSidOffset, NULL) >= 0) {
-					BIGTOHOST32(pSID->dwSubAuthority[0]);
-					BIGTOHOST32(pSID->dwSubAuthority[1]);
-					BIGTOHOST32(pSID->dwSubAuthority[2]);
-					BIGTOHOST32(pSID->dwSubAuthority[3]);
-					BIGTOHOST32(pSID->dwSubAuthority[4]);
-					BIGTOHOST32(pSID->dwSubAuthority[5]);
-					BIGTOHOST32(pSID->dwSubAuthority[6]);
-					BIGTOHOST32(pSID->dwSubAuthority[7]);
-					BIGTOHOST32(pSID->dwSubAuthority[8]);
-					BIGTOHOST32(pSID->dwSubAuthority[9]);
-					BIGTOHOST32(pSID->dwSubAuthority[10]);
-					BIGTOHOST32(pSID->dwSubAuthority[11]);
-					BIGTOHOST32(pSID->dwSubAuthority[12]);
-					BIGTOHOST32(pSID->dwSubAuthority[13]);
-					BIGTOHOST32(pSID->dwSubAuthority[14]);
+					LITTLETOHOST32(pSID->dwSubAuthority[0]);
+					LITTLETOHOST32(pSID->dwSubAuthority[1]);
+					LITTLETOHOST32(pSID->dwSubAuthority[2]);
+					LITTLETOHOST32(pSID->dwSubAuthority[3]);
+					LITTLETOHOST32(pSID->dwSubAuthority[4]);
+					LITTLETOHOST32(pSID->dwSubAuthority[5]);
+					LITTLETOHOST32(pSID->dwSubAuthority[6]);
+					LITTLETOHOST32(pSID->dwSubAuthority[7]);
+					LITTLETOHOST32(pSID->dwSubAuthority[8]);
+					LITTLETOHOST32(pSID->dwSubAuthority[9]);
+					LITTLETOHOST32(pSID->dwSubAuthority[10]);
+					LITTLETOHOST32(pSID->dwSubAuthority[11]);
+					LITTLETOHOST32(pSID->dwSubAuthority[12]);
+					LITTLETOHOST32(pSID->dwSubAuthority[13]);
+					LITTLETOHOST32(pSID->dwSubAuthority[14]);
 					rv = WIN_EVENT_SUCCESS;
 				} else {
 					DEBUG_ERROR("winEvent::getSID() Failure on m_pEventFile->getData()");
