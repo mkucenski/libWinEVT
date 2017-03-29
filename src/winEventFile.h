@@ -19,7 +19,6 @@
 #include "winEventHeader.h"
 #include "winEventCursor.h"
 #include "libbinData/src/binDataFile.h"
-
 #include <string>
 using namespace std;
 

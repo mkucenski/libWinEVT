@@ -16,7 +16,6 @@
 #define _WINEVENTHEADER_H_
 
 #include "eventFile.h"
-
 #include <iostream>
 #include <string>
 #include <vector>
@@ -36,10 +35,10 @@ class winEventHeader {
 		u_int32_t getFileSize() { return m_eventFileHeader.dwFileSize; };
 		u_int32_t getRetentionPeriod() { return m_eventFileHeader.dwRetentionPeriod; };
 		
-		bool getFileDirty() { return (m_eventFileHeader.dwFlags && EVENTLOG_DIRTY); };
-		bool getFileWrapped() { return (m_eventFileHeader.dwFlags && EVENTLOG_WRAPPED); };
-		bool getFileFull() { return (m_eventFileHeader.dwFlags && EVENTLOG_FULL); };
-		bool getFilePrimary() { return (m_eventFileHeader.dwFlags && EVENTLOG_PRIMARY); };
+		bool getFileDirty() { return (m_eventFileHeader.dwFlags & EVENTLOG_DIRTY); };
+		bool getFileWrapped() { return (m_eventFileHeader.dwFlags & EVENTLOG_WRAPPED); };
+		bool getFileFull() { return (m_eventFileHeader.dwFlags & EVENTLOG_FULL); };
+		bool getFilePrimary() { return (m_eventFileHeader.dwFlags & EVENTLOG_PRIMARY); };
 	
 	private:
 		EVENTFILEHEADER m_eventFileHeader;

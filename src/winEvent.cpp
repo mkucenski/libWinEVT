@@ -15,9 +15,7 @@
 #include "winEvent.h"
 #include "winEventFile.h"
 #include "misc/debugMsgs.h"
-#include "misc/stringType.h"
 #include "misc/endianSwitch.h"
-
 #include <sstream>
 using namespace std;
 
@@ -54,11 +52,11 @@ winEvent::winEvent(winEventFile* pEventFile, char* pData, long lOffset, DWORD dw
 winEvent::~winEvent() {
 }
 
-string_t winEvent::getSourceName() {
+string winEvent::getSourceName() {
 	return m_strSource;
 }
 
-string_t winEvent::getComputerName() {
+string winEvent::getComputerName() {
 	return m_strComputer;
 }
 
@@ -121,10 +119,10 @@ WIN_EVENT_RV winEvent::getSID(SID* pSID) {
 	return rv;
 }
 
-WIN_EVENT_RV winEvent::getStrings(vector<string_t>* pvStrings) {
+WIN_EVENT_RV winEvent::getStrings(vector<string>* pvStrings) {
 	WIN_EVENT_RV rv = WIN_EVENT_ERROR;
 
-	string_t strtmp;
+	string strtmp;
 	
 	if (pvStrings) {
 		if (m_eventLogRecord.wNumStrings > 0) {

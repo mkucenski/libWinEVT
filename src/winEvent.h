@@ -16,8 +16,6 @@
 #define _WINEVENT_H_
 
 #include "eventRecord.h"
-#include "misc/stringType.h"
-
 #include <iostream>
 #include <string>
 #include <vector>
@@ -44,9 +42,9 @@ class winEvent {
 		unsigned short getEventType() { return m_eventLogRecord.wEventType; };
 		unsigned short getEventCategory() { return m_eventLogRecord.wEventCategory; };
 
-		string_t getSourceName();
-		string_t getComputerName();
-		WIN_EVENT_RV getStrings(vector<string_t>* pvStrings);
+		string getSourceName();
+		string getComputerName();
+		WIN_EVENT_RV getStrings(vector<string>* pvStrings);
 
 		WIN_EVENT_RV getSID(SID* pSID);
 		string getSIDString();
@@ -63,8 +61,8 @@ class winEvent {
 		long m_lOffset;
 		EVENTLOGRECORD m_eventLogRecord;
 
-		string_t m_strSource;
-		string_t m_strComputer;
+		string m_strSource;
+		string m_strComputer;
 };
 
 #endif //_WINEVENT_H_

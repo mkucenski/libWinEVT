@@ -16,7 +16,6 @@
 #define _WINEVENTCURSOR_H_
 
 #include "eventFile.h"
-
 #include <iostream>
 #include <string>
 #include <vector>

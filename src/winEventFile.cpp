@@ -65,7 +65,7 @@ WIN_EVENT_RV winEventFile::getNextRecord(winEvent** ppEvent) {
 						if (dwHeaderID == EVENTLOGRECORD_HEADER_ID) {
 							DEBUG_INFO("winEventFile::getNextRecord() Next record found at offset: " << offset() - 8 << " (diff = " << ((offset() - 8) - m_lNextRecordPos) << ")");
 							bFound = true;
-							m_lNextRecordPos = offset() - 8;
+							m_lNextRecordPos = currPos() - 8;
 						} else {
 							dwLength = dwHeaderID;
 						}
