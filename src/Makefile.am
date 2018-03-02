@@ -1,4 +1,4 @@
-AM_CXXFLAGS = -I../../
+AM_CXXFLAGS = -I../../../
 
 noinst_LIBRARIES = libWinEVT.a
-libWinEVT_a_SOURCES = eventFile.h eventRecord.h winEvent.cpp winEvent.h winEventCursor.cpp winEventFile.cpp winEventFile.h winEventHeader.cpp winEventHeader.cpp
+libWinEVT_a_SOURCES = winEvent.cpp winEventCursor.cpp winEventFile.cpp winEventHeader.cpp winEventHeader.cpp

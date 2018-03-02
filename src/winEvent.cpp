@@ -12,9 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// #define _DEBUG_
+#include "misc/debugMsgs.h"
+#include "misc/errMsgs.h"
+
 #include "winEvent.h"
 #include "winEventFile.h"
-#include "misc/debugMsgs.h"
 #include "misc/endianSwitch.h"
 #include <sstream>
 using namespace std;
@@ -45,7 +48,7 @@ winEvent::winEvent(winEventFile* pEventFile, char* pData, long lOffset, DWORD dw
 		m_pEventFile->getTwoByteCharString(&m_strSource, m_lOffset + EVENTLOGRECORD_LENGTH, 0, true);
 		m_pEventFile->getTwoByteCharString(&m_strComputer, 0, true);
 	} else {
-		DEBUG_ERROR("winEvent::winEvent() Invalid length value.");
+		ERROR("winEvent::winEvent() Invalid length value.");
 	}
 }
 
@@ -74,7 +77,7 @@ string winEvent::getSIDString() {
 		}
 		strSID = ostr.str();
 	} else {
-		DEBUG_ERROR("winEvent::getSIDString() Failure on getSID.");
+		ERROR("winEvent::getSIDString() Failure on getSID.");
 	}
 	
 	return strSID;
@@ -104,16 +107,16 @@ WIN_EVENT_RV winEvent::getSID(SID* pSID) {
 					LITTLETOHOST32(pSID->dwSubAuthority[14]);
 					rv = WIN_EVENT_SUCCESS;
 				} else {
-					DEBUG_ERROR("winEvent::getSID() Failure on m_pEventFile->getData()");
+					ERROR("winEvent::getSID() Failure on m_pEventFile->getData()");
 				}
 			} else {
-				DEBUG_WARNING("winEvent::getSID() Invalid SID length (" << m_eventLogRecord.dwUserSidLength << ").");
+				WARNING("winEvent::getSID() Invalid SID length (" << m_eventLogRecord.dwUserSidLength << ").");
 			}
 		} else {
-			DEBUG_WARNING("winEvent::getSID() Invalid SID offset (" << m_eventLogRecord.dwUserSidOffset << ").");
+			WARNING("winEvent::getSID() Invalid SID offset (" << m_eventLogRecord.dwUserSidOffset << ").");
 		}
 	} else {
-		DEBUG_ERROR("winEvent::getSID() Invalid destination.");
+		ERROR("winEvent::getSID() Invalid destination.");
 	}
 
 	return rv;
@@ -134,19 +137,19 @@ WIN_EVENT_RV winEvent::getStrings(vector<string>* pvStrings) {
 					if (m_pEventFile->getTwoByteCharString(&strtmp, 0, true) >= 0) {
 						pvStrings->push_back(strtmp);
 					} else {
-						DEBUG_ERROR("winEvent::getStrings() Failure reading string " << i);
+						ERROR("winEvent::getStrings() Failure reading string " << i);
 						rv = WIN_EVENT_ERROR;
 						break;
 					}
 				}
 			} else {
-				DEBUG_ERROR("winEvent::getStrings() Failure reading the first string.");
+				ERROR("winEvent::getStrings() Failure reading the first string.");
 			}
 		} else {
-			DEBUG_WARNING("winEvent::getStrings() Number of strings <= 0");
+			WARNING("winEvent::getStrings() Number of strings <= 0");
 		}
 	} else {
-		DEBUG_ERROR("winEvent::getStrings() Invalid destination.");
+		ERROR("winEvent::getStrings() Invalid destination.");
 	}
 
 	return rv;
@@ -163,20 +166,20 @@ WIN_EVENT_RV winEvent::getData(char** ppData) {
 					if (m_pEventFile->getData(*ppData, m_eventLogRecord.dwDataLength, m_lOffset + m_eventLogRecord.dwDataOffset, NULL) >= 0) {
 						rv = WIN_EVENT_SUCCESS;
 					} else {
-						DEBUG_ERROR("winEvent::getData() Failure on m_pEventFile->getData().");
+						ERROR("winEvent::getData() Failure on m_pEventFile->getData().");
 						free(*ppData);
 					}
 				} else {
-					DEBUG_ERROR("winEvent::getData() Failure allocating memory.");
+					ERROR("winEvent::getData() Failure allocating memory.");
 				}
 			} else {
-				DEBUG_ERROR("winEvent::getData() Invalid data length.");
+				ERROR("winEvent::getData() Invalid data length.");
 			}
 		} else {
-			DEBUG_ERROR("winEvent::getData() Invalid data offset.");
+			ERROR("winEvent::getData() Invalid data offset.");
 		}
 	} else {
-		DEBUG_ERROR("winEvent::getData() Invalid destination.");
+		ERROR("winEvent::getData() Invalid destination.");
 	}
 
 	return rv;

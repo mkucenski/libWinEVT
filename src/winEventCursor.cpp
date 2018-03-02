@@ -12,8 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "winEventCursor.h"
+// #define _DEBUG_
 #include "misc/debugMsgs.h"
+#include "misc/errMsgs.h"
+
+#include "winEventCursor.h"
 
 winEventCursor::winEventCursor(char* pData)	{
 	memset(&m_eventFileCursor, 0, EVENTFILECURSOR_LENGTH);	

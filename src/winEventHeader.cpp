@@ -12,9 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "winEventHeader.h"
-
+// #define _DEBUG_
 #include "misc/debugMsgs.h"
+#include "misc/errMsgs.h"
+
+#include "winEventHeader.h"
 
 winEventHeader::winEventHeader(char* pData)	{
 	memset(&m_eventFileHeader, 0, EVENTFILEHEADER_LENGTH);	
